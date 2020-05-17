@@ -1,0 +1,76 @@
+:root {
+  --main: linear-gradient(45deg, #00ae7b, #0081bf);
+  --secondary: #1b2225;
+  --text-color: #b7e8ff;
+}
+
+.nav {
+  width: 100%;
+  background: var(--main);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: fit-content;
+}
+
+
+ul {
+  position: fixed;
+  border: solid var(--secondary) 2px;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.5em;
+  box-sizing: border-box;
+  list-style: none;
+  font-weight: 300;
+  font-family: Noto Sans;
+  right: -50%;
+  background: var(--secondary);
+  color: var(--text-color);
+
+  transition: right .8s;
+  z-index: 10;
+}
+
+
+
+li a {
+
+  display: block;
+  padding: 15px;
+  background: var(--secondary);
+  text-decoration: none;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.columns {
+  padding: 21px;
+  width: 37px;
+  height: auto;
+  cursor: pointer;
+  float: right;
+}
+
+
+.exit {
+  width: 7%;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  right: -90%;
+  cursor: pointer;
+}
+
+
+.main{
+  position: relative;
+  padding: 0;
+  top: 47px;
+  left: 0px;
+  margin: 0;
+}
+
