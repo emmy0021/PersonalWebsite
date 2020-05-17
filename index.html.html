@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> My first website </title>
+	<!--<link rel="stylesheet" href="style.css">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+ <style>
+ .mySlides {display:none;}
+ 
+body, html, .main {
+  height: 100%;
+}
+
+section {
+  min-height: 100%;
+}
+</style>
+
+
+</head>
+
+<style>
+		/* width */
+	::-webkit-scrollbar {
+	  width: 20px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+	  box-shadow: inset 0 0 5px grey; 
+	  border-radius: 10px;
+	}
+	 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+	  background: gray; 
+	  border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+	  background: #636363; 
+	}
+
+	img {
+	float: left;
+		}
+		
+		
+	 ul {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+		}
+
+	li {
+	  float: left;
+	}
+
+	li a {
+	  display: block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+
+	li a:hover:not(.active) {
+	  background-color: #111;
+	}
+
+	li a.active {
+	  color: white;
+	  background-color: #4CAF50;
+	}
+	
+	body {margin:0;height:5200px;}
+
+	.icon-bar {
+		position: fixed;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+			}
+
+	.icon-bar a {
+		display: block;
+		text-align: center;
+		padding: 16px;
+		transition: all 0.3s ease;
+		color: white;
+		font-size: 20px;
+				}
+
+	.icon-bar a:hover {
+		background-color: #000;
+						}
+
+	.facebook {
+		background: #3B5998;
+		color: white;
+			}
+
+	.github {
+		background: #430297;
+		color: white;
+			}
+
+	.linkedin {
+		background: #007bb5;
+		color: white;
+				}
+				
+	.instagram {
+		background: #125688;
+		color: white;
+				}
+
+
+	.content {
+		margin-left: 75px;
+		font-size: 30px;
+			}
+
+
+	.parallax {
+		/* The image used */
+		background-image: url("earth.jpg");
+
+		/* Set a specific height */
+		min-height: 721px; 
+
+		/* Create the parallax scrolling effect */
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+			}
+
+	.caption {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+		color: #000;
+				}
+				
+				
+	.caption span.border{
+		background-color: #111;
+		color:#fff;
+		padding:18px;
+		font-size:50px;
+		letter-spacing: 8px;
+		border-style: solid;
+						}
+	
+	
+</style>
+	
+<body>
+<div id="myDIV">
+	<ul>
+	  <li><a href="#home" onclick="active"><i class="fa fa-home"></i> Home</a></li>
+	  <li><a href="#aboutMe">About me</a></li>
+	  <li><a href="#resume">Professional image</a></li>
+	  <li><a href="#portfolio">Portfolio</a></li>
+	  <li><a href="#service">Service</a><li>
+	</ul>
+</div>
+
+
+
+	<div id="home"class="parallax">
+		<div class="caption">
+			<span class="border">Hi, I'm Emmanuel Oyervides.</span>
+		</div>
+	</div>
+
+	<div class="icon-bar">
+	  <a href="#" class="facebook" onclick="href = 'https://www.facebook.com/emmanuel.oyervides/'" target="_blank"><i class="fa fa-facebook"></i></a> 
+	  <a href="#" class="linkedin" onclick="href = 'https://www.linkedin.com/in/emmanuel-oyervides/'"  target="_blank"><i class="fa fa-linkedin"></i></a>
+	  <a href="#" class="github" onclick="href = 'https://github.tamu.edu/emmy0021'" target="_blank"><i class="fa fa-github"></i></a> 
+	  <a href="#" class="instagram" onclick="href = 'https://instagram.com/da_manny1/'" target="_blank"><i class="fa fa-instagram"></i></a>
+	</div>
+	
+	
+<div id="aboutMe" style="color: #777;background-color:white;text-align:center;padding:40px 80px 40px;padding-bottom: 80px;text-align: justify;">
+
+<!--p class="line-1 anim-typewriter">Welcome...</p-->
+
+	<h1 style="text-align:center"> About Me </h1>
+	
+	<p style="font-size:20px">
+	<img src="me.jpg" style="margin-right:15px;border-radius: 50%;">
+		Howdy! My name is Emmanuel Oyervides and I am a Computer Science major from 
+		<a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a> graduating in the spring of 2021. I am a first-generation
+		student from El Paso, Texas and I am determined to be the first in my family 
+		to get a college degree. My goal is to one day work for an aerospace company 
+		that focuses on getting people to the big red planet, Mars.
+
+		<br><br>Furthermore,
+		I have many hobbies, one of which is writing music with my guitar, ukulele,
+		and piano. Music is a very big passion of mine because I believe that the 
+		right song can make any bad day better. The second thing I'm most passionate 
+		about is programming. I started programming my sophomore year in high school,
+		and I have been in love with it ever since. I've successfully competed in 
+		competitions like UIL programming, VEX Robotics, and the FIRST Robotics 
+		Competition, and these experiences are what made programming fun for me. 
+		I love it when I get a coding challenge that has me stumped because I feel
+		like that gives me the biggest opportunity to grow as a programmer. 
+		Whenever I am presented with a challenge and I don't know the solution 
+		to the problem, I will always take on this challenge and find a way to 
+		make it work and learn a new thing in the process.
+		
+	</p>
+</div>
+
+<div id="resume" style="color: #777;padding-top:40px;background-color:white">
+	<h1 style="text-align:center">Professional image</h1> 
+	<iframe src="resume.pdf" width="100%" height="1123px" frameborder="0">
+	</iframe>
+</div>
+
+
+
+<div id="portfolio" style="padding:55px;color: #777">
+	<h1 style="color: #777;text-align:center;">Portfolio</h1>
+	
+	<h2>Spider Bot<h2>
+<p style="font-size: 25px;padding-bottom: 35px;font-weight:normal">
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fturtlerobotics%2Fvideos%2F349746965614238%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden;float: left" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fturtlerobotics%2Fvideos%2F2145893135500464%2F&show_text=0&width=267" width="267" height="476" style="border:none;overflow:hidden;padding-left: 25px;float: left;padding-right: 25px" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+Spider Bot is a project that I work on outside of school with 4 other teammates for the <a href="https://maroonlink.tamu.edu/organization/turtle" target="_blank">T.U.R.T.L.E
+ Robotics Club</a>. The aim of this project is to create a remote-controlled robot capable of scaling 
+ and traversing walls and ceilings in the hopes that we can use this to inspect all types of surfaces
+ including, but not limited to, airplanes, pipes, and building infrastructure. We are in the early 
+ stages of the project as we are testing what is the best gap height to have the highest force to 
+ stay on a wall with a prototype that we 3D printed ourselves. Our goal for the end of the semester
+ is to get a working prototype that is capable of driving on a wall or ceiling, then our next goal would
+ be to finally traverse corners so it can travel from one wall to another. Another goal for this 
+ semester is to get this project approved for the senior design project requirements for our respective majors. 
+</p>
+
+</div>
+
+
+<div style="color: #777;padding-left: 55px">
+	<h2>8-bit Processor Design<h2>
+	<p style="font-size: 25px;padding-left: 55px;font-weight:normal">
+	<img src="8bit.jpg" width="560" height="315" style="float:right;border-style: solid;padding-right: 50px;padding-left: 50px">
+	For my Computer Science 312 class on Computer Organization I designed an 8-bit 
+	processor that is capable of matrix addition in <a href="http://www.cburch.com/logisim/" target="_blank">Logisim</a>. For this project I had
+	to design an Arithmetic Logic Unit, a register file, and a decoder. I then used
+	this in conjunction to the ROM and RAM provided by Logisim to create the 
+	processor that could interpret my very own <a href="https://docs.google.com/document/d/1MTHUd0jr_jp7nICdQp3a3Wo2O5Z17JoGPkhkg2luj-w/edit?usp=sharing" target="_blank">assembly language</a>. This assembly
+	language includes commands such as jump, comparison, multiplication, and many 
+	more commands that a basic assembly language would include. These commands are 
+	then encoded into hexadecimal so that the processor is able to interpret the 
+	commands correctly. I then used these basic commands in order to create a program
+	that was capable adding two matrices together. With these commands we can create 
+	various programs which can include for loops, while loops, and comparisons. With 
+	the backbone of basic programs, we can create even more complex programs and
+	algorithms. More information can be found <a href ="http://people.tamu.edu/~kavyasree.bvs/fall18/csce312h/labs/project/Lab6_proj_description.pdf" target="_blank">
+	here</a>.
+</p>
+</div>
+
+
+<div style="color: #777;padding-left: 55px">
+<h2>IDME</h2>
+	<p style="font-size: 25px;padding-bottom: 35px;font-weight:normal">
+	
+	<iframe style="float:left;padding-right: 25px" width="560" height="315" src="https://www.youtube.com/embed/K7alP5y8SP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</iframe>
+		IDME is an app that my friend and I developed in high school. The app was 
+		written in <a href="https://openjfx.io/" target="_blank">JavaFX</a> and it was submitted to the <a href="https://www.congressionalappchallenge.us/" target="_blank">Congressional App Challenge</a>,
+		which we ended up winning in our district. The aim of the app is to 
+		facilitate taking in class attendance by using the barcodes in our id 
+		tags and a scanner to instantly and effortlessly take attendance as soon 
+		as the student walks into the class. This not only increases class time by 
+		15%, but it also adds a new level a security to the school that it didn’t 
+		previously have before. With this app in place, teachers can get straight 
+		into the lecture right as soon as the bell rings.
+	
+</p>
+
+
+</div>
+
+
+
+<div id="service" style="color: #777;padding-left: 75px;padding-top: 50px">
+	<h1 style="text-align:center">Service</h1>
+	
+	
+	<div class="w3-content w3-display-container">
+	<img class="mySlides" src="tour2.JPG" width="720" height="480" style="float:right;padding-right: 50px;padding-left: 50px">
+	<img class="mySlides" src="tour1.JPG" width="720" height="480" style="float:right;padding-right: 50px;padding-left: 50px">
+	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+<p style="font-size: 25px">
+	I think that it is very important to give back to the community. More specifically, 
+	I think that it is important to help our youth reach their full potential, which is 
+	why I volunteered through <a href="http://tamushpe.org/" target="_blank">SHPE</a> at Jones Elementary to help with their STEM club.
+	This program is aimed to get elementary school kids excited about engineering through 
+	STEM. I helped coordinate engineering related activities, as well as touring kids through 
+	the A&M campus, all in the efforts to inspire the next generation of engineers. I believe 
+	this to be very important because one day the next generation is going to take over and I 
+	think it is very important that they are prepared from a young age for all the challenges 
+	that will arise in the future.
+	
+	</p>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>

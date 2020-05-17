@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: auto;
+            height: 10px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .block {
+            border: black;
+            border-style: solid;
+            background-color: white;
+            color: black;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 0px 0px;
+            cursor: pointer;
+        }
+
+        .flex-parent {
+            display: flex;
+        }
+
+        .flex-child {
+            flex: 1;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+<body onresize="size()">
+
+    <h1>My First Heading</h1>
+
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="64" value="32" class="slider" id="myRange">
+        <input type="range" min="2" max="500" value="35" class="slider" id="mySpeed">
+        <button onclick="bubbleSort()">Bubble Sort</button>
+        <p>Value: <span id="demo"></span></p>
+    </div>
+
+    <div class='parent flex-parent' id="flex">
+        <div class='child flex-child'>A</div>
+
+
+    </div>
+
+    <script>
+        var slider = document.getElementById("myRange");
+        var speedSlider = document.getElementById("mySpeed");
+        var output = document.getElementById("demo");
+        var bars = document.getElementById("flex");
+        var size;
+        var speed;
+        output.innerHTML = slider.value;
+
+        var arr = new Array(64);
+
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        slider.oninput = function () { //<div class= 'child flex-child'>A</div>
+
+            output.innerHTML = this.value;
+            size = this.value;
+
+            var i;
+            for (i = 0; i < this.value; i++) {
+                arr[i] = Math.round(Math.random() * 64);
+            }
+            printArray(0, size - 1);
+        }
+
+        speedSlider.oninput = function () {
+            speed = this.value;
+        }
+
+        function bubbleSort() {
+
+            var swapped = false;
+
+
+
+            for (var i = size - 1; i > -1; i--) {
+                swapped = false;
+
+                var id = setInterval(sort, speed);
+
+                function sort() {
+                    for (var j = 0; j < i; j++) {
+
+                        if (arr[j] > arr[j + 1]) {
+                            var temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                            swapped = true;
+
+                        }
+
+                    }
+                    printArray(j, j + 1);
+                }
+                if (!swapped) {
+                    break;
+                    clearInterval(id);
+                }
+            }
+
+            printArray(100, 100);
+        }
+
+        function printArray(x, y) {
+            bars.innerHTML = "";
+            var i;
+            for (i = 0; i < size; i++) {
+                if (i == x || i == y) {
+                    bars.innerHTML += "<div class='child flex-child' style=\"height:" + arr[i] * 8 +
+                        "px;background-color: red;\"></div>";
+                } else {
+                    bars.innerHTML += "<div class='child flex-child' style=\"height:" + arr[i] * 8 + "px\"></div>";
+                }
+            }
+        }
+    </script>
+
+
+
+
+    <div id="grid" style="color: black;">
+
+    </div>
+
+
+
+
+    <script>
+        function size() {
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            var rem = w / 20 - 1;
+            var txt = "Window size: width=" + w + ", height=" + h;
+            document.getElementById("grid").innerHTML = "";
+            for (var i = 0; i < rem; i++) {
+                document.getElementById("grid").innerHTML += "<button onClick=\"changeColor(" + i +
+                    ")\" class=\"block\" id=\"block" + i + "\"> </button>";
+            }
+
+        }
+
+        function changeColor(x) {
+            var b = "block" + x;
+            console.log(b);
+            document.getElementById(b).style.backgroundColor = "black";
+        }
+    </script>
+
+    <form action="/action_page.php">
+        First name: <input type="text" name="First String:" value="knowledgeable"><br>
+        Last name: <input type="text" name="LastName" value="acknowledgement"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+
+<canvas id="myCanvas" width="800" height="640" style="border:1px solid #000000;"></canvas>
+
+</html>
