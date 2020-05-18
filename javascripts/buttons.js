@@ -7,43 +7,68 @@ var about = document.getElementById("about");
 var portfolio = document.getElementById("portfolio");
 var contacts = document.getElementById("contacts");
 
-columns.addEventListener('click', function(){
-    menu.style.top = "0";
-    main.style.opacity = "visible";
-    setTimeout(function(){
-        main.style.opacity = 1;
-    },1000);
-
-    setTimeout(function(){
-        projects.style.opacity = 1;
-    },1150);
 
 
-    setTimeout(function(){
-        about.style.opacity = 1;
-    },1300);
 
-    setTimeout(function(){
-        portfolio.style.opacity = 1;
-    },1450);
-
-    setTimeout(function(){
-        contacts.style.opacity = 1;
-    },1600);
+var menuContent = [main, projects, about, portfolio, contacts];
 
 
+var io = true;
+exit.addEventListener('click', function () {
+    
+    if (io) { //open menu
+        menu.style.width = "145vw";
+        menu.style.height = "145vw";
+
+        menuContent.forEach(show);
+
+        exit.style.top = "15%";
+        exit.style.left = "15%";
+        exit.style.transform = "rotate(360deg)";
+        exit.innerHTML = "X";
+
+
+
+
+    } else { //close menu
+        menu.style.width = "60vw";
+        menu.style.height = "60vw";
+
+        menuContent.forEach(hide);
+        setTimeout(function(){
+            exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
+            
+            
+        },730);
+
+
+        exit.style.top = "37%";
+        exit.style.left = "36%";
+        exit.style.transform = "rotate(0deg)";
+
+    }
+
+    io = !io;
 });
 
-exit.addEventListener('click',function(){
-    menu.style.top = "-100%";
-    main.style.opacity = 0;
-    projects.style.opacity = 0;
-    about.style.opacity = 0;
-    portfolio.style.opacity = 0;
-    contacts.style.opacity = 0;
-});
 
 
-function show(){
+
+function show(item, index) {
+
+    setTimeout(function () {
+        item.style.transition = "opacity .8s, height .8s, width .8s";
+        item.style.opacity = 1;
+        item.style.visibility = "visible";
+        item.style.pointerEvents = "auto";
+    }, 200 + 150 * index);
+}
+
+function hide(item, index) {
+    
+        item.style.transition = "opacity 0s, height .6s, width .6s";
+        item.style.visibility = "hidden";
+        item.style.opacity = 0;
+        item.style.pointerEvents = "none";
     
 }

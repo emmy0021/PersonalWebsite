@@ -72,30 +72,38 @@ li {
 
   display: block;
   position: relative;
-  top: 9%;
   transition: all 1s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spacer{
+  width:100%;
+  height: 10%;
 }
 
 
 
-.columns {
-  padding: 4%;
-  width: 14%;
-  height: auto;
-  cursor: pointer;
-  float: right;
+.column {
+  width: 100px;
+  margin-bottom: 22px;
+  border-radius: 10px;
+  height: 12px;
+  background: var(--text-color);
+  transition: all .8s;
 }
 
 
 .exit {
   color: var(--secondary);
-  width: 7%;
-  text-align: center;
-  padding: 61px;
-  position: relative;
-  left: 4%;
-  top: 72px;
-  cursor: pointer;
+    width: 7%;
+    text-align: center;
+    padding: 133px;
+    position: relative;
+    left: 36%;
+    top: 37%;
+    cursor: pointer;
+    transition: top .8s,left .8s,transform .8s;
 }
 
 
@@ -111,4 +119,13 @@ li {
 
 
 
-.menu {}
+.menu {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 60vw;
+  height: 60vw;
+  top: -14%;
+  left: -22%;
+  transition: height .8s, width .8s;
+  
+}
