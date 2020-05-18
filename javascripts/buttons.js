@@ -3,9 +3,9 @@ var columns = document.getElementById("columns");
 var exit = document.getElementById("exit");
 
 columns.addEventListener('click', function(){
-    menu.style.right = "0px";
+    menu.style.top = "0";
 });
 
 exit.addEventListener('click',function(){
-    menu.style.right = "-50%";
+    menu.style.top = "-100%";
 });
