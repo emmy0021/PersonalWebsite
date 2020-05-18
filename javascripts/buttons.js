@@ -39,13 +39,11 @@ exit.addEventListener('click', function () {
         menuContent.forEach(hide);
         setTimeout(function(){
             exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
-            
-            
-        },730);
+        },150);
 
 
-        exit.style.top = "37%";
-        exit.style.left = "3%";
+        exit.style.top = "29%";
+        exit.style.left = "-3%";
         exit.style.transform = "rotate(0deg)";
 
     }
