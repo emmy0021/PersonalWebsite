@@ -19,11 +19,12 @@ exit.addEventListener('click', function () {
     if (io) { //open menu
         menu.style.width = "145vw";
         menu.style.height = "145vw";
+  
 
         menuContent.forEach(show);
 
         exit.style.top = "15%";
-        exit.style.left = "15%";
+        exit.style.left = "58%";
         exit.style.transform = "rotate(360deg)";
         exit.innerHTML = "X";
 
@@ -34,6 +35,7 @@ exit.addEventListener('click', function () {
         menu.style.width = "60vw";
         menu.style.height = "60vw";
 
+
         menuContent.forEach(hide);
         setTimeout(function(){
             exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
@@ -43,7 +45,7 @@ exit.addEventListener('click', function () {
 
 
         exit.style.top = "37%";
-        exit.style.left = "36%";
+        exit.style.left = "3%";
         exit.style.transform = "rotate(0deg)";
 
     }
@@ -61,7 +63,7 @@ function show(item, index) {
         item.style.opacity = 1;
         item.style.visibility = "visible";
         item.style.pointerEvents = "auto";
-    }, 200 + 150 * index);
+    }, 400 + 150 * index);
 }
 
 function hide(item, index) {
