@@ -64,7 +64,7 @@ li a {
   text-align: center;
   justify-content: center;
   color: var(--text-color);
-
+  
 
 }
 
@@ -73,6 +73,7 @@ li {
   display: block;
   position: relative;
   top: 9%;
+  transition: all 1s;
 }
 
 
