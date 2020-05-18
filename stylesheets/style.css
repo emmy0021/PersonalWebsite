@@ -34,13 +34,22 @@ ul {
   font-weight: 700;
   font-family: 'xol';
   left: 0;
-  top:-100%;
+  top:-0%;
   background: var(--background);
   color: var(--text-color);
 
   transition: top .8s;
   z-index: 15;
   text-transform: uppercase;
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .exit{
+    -webkit-text-stroke: 5px var(--secondary);
+    -webkit-text-fill-color: var(--background);
+  }
+
+
 }
 
 
