@@ -10,13 +10,14 @@
   src: url("../fonts/xolonium-bold.otf") format("opentype");
 }
 
-.nav {
+nav {
   width: 100%;
   background: var(--main);
   position: fixed;
   top: 0;
   left: 0;
   height: fit-content;
+  z-index: 2;
 }
 
 
@@ -33,7 +34,7 @@ ul {
   list-style: none;
   font-weight: 700;
   font-family: 'xol';
-  top:-0%;
+  top: -0%;
   background: var(--background);
   color: var(--text-color);
 
@@ -43,12 +44,10 @@ ul {
 }
 
 @supports (-webkit-text-stroke: 1px black) {
-  .exit{
+  .exit {
     -webkit-text-stroke: 2px var(--secondary);
     -webkit-text-fill-color: var(--background);
   }
-
-
 }
 
 
@@ -63,8 +62,6 @@ li a {
   text-align: center;
   justify-content: center;
   color: var(--text-color);
-  
-
 }
 
 li {
@@ -76,8 +73,8 @@ li {
   pointer-events: none;
 }
 
-.spacer{
-  width:100%;
+.spacer {
+  width: 100%;
   height: 10%;
 }
 
@@ -96,21 +93,19 @@ li {
 
 .exit {
   color: var(--secondary);
-    width: 0%;
-    text-align: center;
-    padding: 42px;
-    padding-right: 75px;
-    position: relative;
-    top: 29%;
-    left: -3%;
-    cursor: pointer;
-    transition: top .8s,left .8s,transform .8s;
+  width: 0%;
+  text-align: center;
+  padding: 42px;
+  padding-right: 75px;
+  position: relative;
+  top: 29%;
+  left: -3%;
+  cursor: pointer;
+  transition: top .8s, left .8s, transform .8s;
 }
 
 
 .main {
-      
-
 
   position: relative;
   padding: 0;
@@ -123,8 +118,6 @@ li {
 
 
 .menu {
-
-
   overflow: hidden;
   border-radius: 50%;
   width: 60vw;
@@ -133,5 +126,50 @@ li {
   right: -23%;
 
   transition: height .8s, width .8s;
-  
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .menu {
+    border-radius: 0;
+    width: 100%;
+    height: 14vh;
+    top: 0;
+    right: auto;
+  }
+
+  .exit{
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  ul{
+    display: flex;
+    font-size: 1.2rem;
+
+    font-weight: 500;
+  }
+
+  .spacer{
+    height: 0;
+  }
+  .nav-link{
+    opacity: 1;
+    display: inline-block;
+    flex: 1;
+    justify-content: center;
+    padding-top: 2%;
+    pointer-events: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+  ul{
+    display: flex;
+    font-size: 1.62rem;
+    font-weight: 500;
+  }
 }
