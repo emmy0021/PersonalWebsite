@@ -1,5 +1,5 @@
 :root {
-  --main: linear-gradient(45deg, #00ae7b, #0081bf);
+  --main: #06070a;
   --background: #1a1a1a;
   --text-color: white;
   --secondary: #f70b1b;
@@ -10,9 +10,14 @@
   src: url("../fonts/xolonium-bold.otf") format("opentype");
 }
 
+body{
+  background-color: var(--main);
+  display: table-cell;
+}
+
 nav {
   width: 100%;
-  background: var(--main);
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,10 +25,11 @@ nav {
   z-index: 2;
 }
 
+canvas { display: block; }
+
 
 ul {
   position: fixed;
-  border: solid var(--background) 2px;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -57,7 +63,6 @@ li a {
   display: block;
   padding: 7px;
 
-  background: var(--background);
   text-decoration: none;
   text-align: center;
   justify-content: center;
@@ -109,15 +114,65 @@ li {
 
   position: relative;
   padding: 0;
-  top: 47px;
+  top: 0px;
   left: 0px;
-  margin: 0;
+  right:0px;
   z-index: 1;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#myVideo {
+  position: relative;
+  width: 100%; 
+  height: 100%;
+  background-color: black;
+
+  display: block;
+	width: auto;
+  margin: 0 auto; 
+  
+
+  -moz-transform: scale(1, -1);
+-webkit-transform: scale(1, -1);
+-o-transform: scale(1, -1);
+-ms-transform: scale(1, -1);
+transform: scale(1, -1);
+
+  bottom: 0;
+  
+}
+
+#credits{
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: var(--text-color);
+  
+}
+
+#header1{
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-size: 5rem;
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  color: var(--text-color);
+}
+
+#header2{
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-size: 5rem;
+  position: absolute;
+  left: 30%;
+  bottom: 25%;
+  color: var(--main);
 }
 
 
-
 .menu {
+  
   overflow: hidden;
   border-radius: 50%;
   width: 60vw;
@@ -131,12 +186,15 @@ li {
 @media only screen and (min-width: 600px) {
   /* For tablets: */
   .menu {
+    position: relative;
     border-radius: 0;
     width: 100%;
-    height: 14vh;
+    height: 8vh;
     top: 0;
     right: auto;
+    background-color: transparent;
   }
+
 
   .exit{
     visibility: hidden;
@@ -149,6 +207,7 @@ li {
     font-size: 1.2rem;
 
     font-weight: 500;
+    background-color: transparent;
   }
 
   .spacer{
@@ -162,6 +221,8 @@ li {
     padding-top: 2%;
     pointer-events: auto;
   }
+
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -171,5 +232,20 @@ li {
     display: flex;
     font-size: 1.62rem;
     font-weight: 500;
+    background-color: transparent;
   }
+
+
+  .menu {
+    position: relative;
+    border-radius: 0;
+    width: 100%;
+    top: 0;
+    right: auto;
+    background-color: transparent;
+
+    height: 11vh;
+  }
+
+
 }

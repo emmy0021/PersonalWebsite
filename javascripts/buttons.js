@@ -42,8 +42,8 @@ exit.addEventListener('click', function () {
         },150);
 
 
-        exit.style.top = "29%";
-        exit.style.left = "-3%";
+        exit.style.top = "37%";
+        exit.style.left = "13%";
         exit.style.transform = "rotate(0deg)";
 
     }
@@ -72,3 +72,7 @@ function hide(item, index) {
         item.style.pointerEvents = "none";
     
 }
+
+
+
+
