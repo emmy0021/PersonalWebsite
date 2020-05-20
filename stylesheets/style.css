@@ -81,10 +81,10 @@ li {
 
 
 .column {
-  width: 46px;
+  width: 56px;
   margin-bottom: 9px;
   border-radius: 9px;
-  height: 6px;
+  height: 7.5px;
   background: var(--text-color);
   transition: all .8s;
   pointer-events: none;
@@ -98,8 +98,8 @@ li {
   padding: 42px;
   padding-right: 75px;
   position: relative;
-  top: 29%;
-  left: -3%;
+  top: 37%;
+  left: 13%;
   cursor: pointer;
   transition: top .8s, left .8s, transform .8s;
 }
