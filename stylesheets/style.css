@@ -2,7 +2,7 @@
   --main: #06070a;
   --background: #1a1a1a;
   --text-color: white;
-  --secondary: #f70b1b;
+  --secondary: #f86d77;
 }
 
 @font-face {
@@ -59,14 +59,14 @@ ul {
 
 
 li a {
-
   display: block;
-  padding: 7px;
+  padding: 14px;
 
   text-decoration: none;
   text-align: center;
   justify-content: center;
   color: var(--text-color);
+  cursor: pointer;
 }
 
 li {
@@ -104,7 +104,7 @@ li {
   padding-right: 75px;
   position: relative;
   top: 37%;
-  left: 13%;
+  left: 8%;
   cursor: pointer;
   transition: top .8s, left .8s, transform .8s;
 }
@@ -183,15 +183,60 @@ transform: scale(1, -1);
   transition: height .8s, width .8s;
 }
 
+.nav-link:active{
+  -webkit-text-stroke: 2px var(--secondary);
+  -webkit-text-fill-color: var(--text-color);
+}
+
+
+
+.hoverable::after{
+  content: '';
+  background: red;
+  position: inherit;
+  display: block;
+  border-bottom: 2px var(--secondary) solid;
+  width: 0;
+  transition: left .4s, width .4s, right .4s;
+  right: 0;
+
+}
+
+.nav-link:hover{
+text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+}
+
+
+.hoverable:hover::after{
+  right: 0;
+  width: 100%;
+}
+
+
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
 @media only screen and (min-width: 600px) {
   /* For tablets: */
   .menu {
-    position: relative;
+    position: absolute;
+    overflow: auto;
+    display: grid;
     border-radius: 0;
-    width: 100%;
-    height: 8vh;
+    justify-content: right;
+    width: 50%;
+    height: 100vh;
     top: 0;
-    right: auto;
+    right: 0;
     background-color: transparent;
   }
 
@@ -204,10 +249,16 @@ transform: scale(1, -1);
 
   ul{
     display: flex;
-    font-size: 1.2rem;
+    font-size: 2rem;
 
     font-weight: 500;
     background-color: transparent;
+  }
+
+  li a {
+    text-align: end;
+    display: initial;
+    float: right;
   }
 
   .spacer{
@@ -230,22 +281,28 @@ transform: scale(1, -1);
 
   ul{
     display: flex;
-    font-size: 1.62rem;
+    font-size: 2.4rem;
     font-weight: 500;
     background-color: transparent;
+  }
+  li a {
+    text-align: end;
+    display: initial;
+    float: right;
   }
 
 
   .menu {
-    position: relative;
+    position: absolute;
+    overflow: auto;
+    display: grid;
     border-radius: 0;
-    width: 100%;
+    justify-content: right;
+    width: 50%;
+    height: 100vh;
     top: 0;
-    right: auto;
+    right: 0;
     background-color: transparent;
-
-    height: 11vh;
   }
-
 
 }

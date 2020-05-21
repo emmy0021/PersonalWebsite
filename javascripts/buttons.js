@@ -24,7 +24,7 @@ exit.addEventListener('click', function () {
         menuContent.forEach(show);
 
         exit.style.top = "15%";
-        exit.style.left = "58%";
+        exit.style.left = "65%";
         exit.style.transform = "rotate(360deg)";
         exit.innerHTML = "X";
 
@@ -43,7 +43,7 @@ exit.addEventListener('click', function () {
 
 
         exit.style.top = "37%";
-        exit.style.left = "13%";
+        exit.style.left = "8%";
         exit.style.transform = "rotate(0deg)";
 
     }
