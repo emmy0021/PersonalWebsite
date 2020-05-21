@@ -67,7 +67,6 @@ li a {
   justify-content: center;
   color: var(--text-color);
   cursor: pointer;
-  width: 100%;
 
 
 }
@@ -78,10 +77,9 @@ li {
   position: relative;
   transition: all 1s;
   opacity: 0;
-  width: 100%;
   pointer-events: none;
 
-  background-color: var(--main);
+    background-color: var(--main);
 }
 
 .spacer {
@@ -294,6 +292,15 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     pointer-events: auto;
   }
 
+  nav{
+    left: auto;
+    right: 0;
+    width: 50%
+  }
+
+  li{
+    background-color: transparent;
+  }
 
 }
 
@@ -326,6 +333,16 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     background-color: transparent;
   
     visibility: visible;
+  }
+
+  nav{
+    left: auto;
+    right: 0;
+    width: 50%
+  }
+
+  li{
+    background-color: transparent;
   }
 
 }
