@@ -189,7 +189,6 @@ transform: scale(1, -1);
 
   transition: height .8s, width .8s;*/
 
-
   top: 0;
   right: 0;
   left: 0;
@@ -217,11 +216,34 @@ transform: scale(1, -1);
   width: 0;
   transition: left .4s, width .4s, right .4s;
   right: 0;
+}
+
+
+.hoverable::before{
+  content: '';
+
+  top:25px;
+  right: -40px;
+  position: absolute;
+
+  display: block;
+
+  border-top: 25px solid transparent;
+  border-right: 40px solid red;
+  border-bottom: 25px solid transparent;
 
 }
 
 .nav-link:hover{
 text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+}
+
+.hoverable::before:hover{
+  background-color: #fff;
+}
+
+.nav-link:hover+.hoverable::before{
+  background-color: white;
 }
 
 
@@ -247,7 +269,7 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
   /* For tablets: */
   .menu {
     position: absolute;
-    overflow: auto;
+    overflow: hidden;
     display: grid;
     border-radius: 0;
     justify-content: right;
@@ -301,6 +323,9 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
   li{
     background-color: transparent;
   }
+  .nav-link:hover{
+      left:-50px;
+  }
 
 }
 
@@ -322,7 +347,7 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
 
   .menu {
     position: absolute;
-    overflow: auto;
+    overflow: hidden;
     display: grid;
     border-radius: 0;
     justify-content: right;
@@ -345,4 +370,11 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     background-color: transparent;
   }
 
+  .nav-link:hover{
+    left:-50px;
+  }
+
+  .hoverable::before{
+    top:45px;
+  }
 }
