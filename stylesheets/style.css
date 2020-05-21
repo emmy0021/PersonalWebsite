@@ -223,6 +223,7 @@ transform: scale(1, -1);
 
 
 .hoverable::before{
+  visibility: hidden;
   content: '';
   top: -35px;
   right: -97px;
@@ -270,7 +271,7 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
 
 #worldImg{
   top:25%;
-  height: 50%;
+  height: 288px;
   position: absolute;
   left: 17%;
 }
@@ -348,6 +349,9 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
   }
   .nav-link:hover{
       right:-11px;
+  }
+  .hoverable::before{
+    visibility: visible;
   }
 
 }
