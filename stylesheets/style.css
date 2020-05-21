@@ -1,5 +1,5 @@
 :root {
-  --main: #06070a;
+  --main: black;
   --background: #1a1a1a;
   --text-color: white;
   --secondary: #f86d77;
@@ -25,7 +25,9 @@ nav {
   z-index: 2;
 }
 
-canvas { display: block; }
+canvas { 
+  display: block; 
+}
 
 
 ul {
@@ -221,17 +223,19 @@ transform: scale(1, -1);
 
 .hoverable::before{
   content: '';
-
-  top:25px;
-  right: -40px;
+  top: -35px;
+  right: -97px;
   position: absolute;
-
   display: block;
-
+  margin: 60px;
   border-top: 25px solid transparent;
   border-right: 40px solid red;
   border-bottom: 25px solid transparent;
 
+}
+
+.hoverable::before:hover+.nav-link:hover{
+    left:-50px;
 }
 
 .nav-link:hover{
@@ -312,6 +316,9 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     justify-content: center;
     padding-top: 2%;
     pointer-events: auto;
+
+    right: -66px;
+    margin-right: 60px;
   }
 
   nav{
@@ -324,7 +331,7 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     background-color: transparent;
   }
   .nav-link:hover{
-      left:-50px;
+      right:-11px;
   }
 
 }
@@ -370,11 +377,9 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     background-color: transparent;
   }
 
-  .nav-link:hover{
-    left:-50px;
-  }
+
 
   .hoverable::before{
-    top:45px;
+    top:-20px;
   }
 }
