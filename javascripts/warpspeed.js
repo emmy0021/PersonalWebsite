@@ -158,7 +158,7 @@ document.onmousedown = function (event) {
 	if (event.path[0] != pause || event.path[1] != pause) {
 		if (event.path[0] == exit) {
 			warpSpeed = false;
-		} else if (event.path[0].className == 'hoverable') {
+		} else if (event.path[0].className == 'hoverable' && event.path[0].className == 'nav-link noSelect') {
 			warpSpeed = true;
 			setTimeout(function () {
 				warpSpeed = false;
@@ -168,9 +168,9 @@ document.onmousedown = function (event) {
 			warpSpeed = true
 			let timeOut;
 
-			if(phone){
+			if (phone) {
 				timeOut = 100;
-			}else{
+			} else {
 				timeOut = 1500;
 			}
 			setTimeout(function () {
@@ -183,15 +183,17 @@ document.onmousedown = function (event) {
 
 
 }
-document.onmouseup = function () {
+document.onmouseup = function (event) {
+	//console.log(event.path[0].className);
+	if (event.path[0].className != 'hoverable' && event.path[0].className != 'nav-link noSelect') {
+		setTimeout(function () {
+			worldImg.style.left = "17%";
+		}, 300);
+	}
 
-	setTimeout(function () {
-		worldImg.style.left = "10%";
-	}, 300);
 
-	
-	
-	if(!phone) {
+
+	if (!phone) {
 		setTimeout(function () {
 			warpSpeed = false;
 		}, 1500);

@@ -17,25 +17,34 @@ var io = true;
 
 
 var phone = true;
-console.log(window.innerWidth);
 if (window.innerWidth >= 600) {
-	phone = false;
+    phone = false;
 }
 
-console.log(phone);
-if (phone) {
-    menuContent.forEach(e => {
-        e.addEventListener('click', function () {
-            setTimeout(function () {
-                exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
-            }, 150);
-            exit.style.transform = "rotate(0deg)";
+console.log("Phone: " + phone);
 
-            menuContent.forEach(hide);
-            io = !io;
-        });
-    })
+
+menuContent.forEach(e => {
+    e.getElementsByClassName("hoverable")[0].addEventListener('click',function(){
+        rotateMenu(this);
+    });
+});
+
+function rotateMenu(content) {
+    //console.log(content);
+    if (phone) {
+        setTimeout(function () {
+            exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
+        }, 150);
+        exit.style.transform = "rotate(0deg)";
+
+        menuContent.forEach(hide);
+        io = !io;
+    }
+
+    console.log("Navigating to: " + content.innerHTML);
 }
+
 
 exit.addEventListener('click', function () {
 
