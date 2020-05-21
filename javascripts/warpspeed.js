@@ -189,6 +189,8 @@ document.onmouseup = function () {
 		worldImg.style.left = "10%";
 	}, 300);
 
+	
+	
 	if(!phone) {
 		setTimeout(function () {
 			warpSpeed = false;

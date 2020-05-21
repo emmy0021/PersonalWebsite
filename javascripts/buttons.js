@@ -82,7 +82,7 @@ function show(item, index) {
 function hide(item, index) {
     menu.style.bottom = "auto";
     setTimeout(function () {
-        item.style.transition = "opacity 0s, height .6s, width .6s";
+        item.style.transition = "opacity .8s, height .6s, width .6s";
         item.style.visibility = "hidden";
         item.style.opacity = 0;
         item.style.pointerEvents = "none";

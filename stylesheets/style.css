@@ -109,7 +109,7 @@ li {
   text-align: center;
   padding: 42px;
   padding-right: 75px;
-  position: absolute;
+  position: fixed;
   top: 0%;
   right: 3%;
   cursor: pointer;
@@ -279,7 +279,7 @@ li {
   top: 25%;
   height: 288px;
   position: absolute;
-  left: 17%;
+  left: 10%;
   pointer-events: none;
 }
 
