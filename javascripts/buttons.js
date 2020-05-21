@@ -17,14 +17,10 @@ var io = true;
 exit.addEventListener('click', function () {
     
     if (io) { //open menu
-        menu.style.width = "145vw";
-        menu.style.height = "145vw";
   
 
         menuContent.forEach(show);
 
-        exit.style.top = "15%";
-        exit.style.left = "65%";
         exit.style.transform = "rotate(360deg)";
         exit.innerHTML = "X";
 
@@ -32,8 +28,6 @@ exit.addEventListener('click', function () {
 
 
     } else { //close menu
-        menu.style.width = "60vw";
-        menu.style.height = "60vw";
 
 
         menuContent.forEach(hide);
@@ -42,8 +36,6 @@ exit.addEventListener('click', function () {
         },150);
 
 
-        exit.style.top = "37%";
-        exit.style.left = "8%";
         exit.style.transform = "rotate(0deg)";
 
     }
@@ -55,7 +47,7 @@ exit.addEventListener('click', function () {
 
 
 function show(item, index) {
-
+    menu.style.bottom = 0;
     setTimeout(function () {
         item.style.transition = "opacity .8s, height .8s, width .8s";
         item.style.opacity = 1;
@@ -65,11 +57,14 @@ function show(item, index) {
 }
 
 function hide(item, index) {
-    
+    menu.style.bottom = "auto";
+    setTimeout(function () {
         item.style.transition = "opacity 0s, height .6s, width .6s";
         item.style.visibility = "hidden";
         item.style.opacity = 0;
         item.style.pointerEvents = "none";
+
+    }, 100 + 150 * (menuContent.length-index));
     
 }
 

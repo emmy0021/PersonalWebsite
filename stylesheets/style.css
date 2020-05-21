@@ -67,6 +67,9 @@ li a {
   justify-content: center;
   color: var(--text-color);
   cursor: pointer;
+  width: 100%;
+
+
 }
 
 li {
@@ -75,12 +78,15 @@ li {
   position: relative;
   transition: all 1s;
   opacity: 0;
+  width: 100%;
   pointer-events: none;
+
+  background-color: var(--main);
 }
 
 .spacer {
-  width: 100%;
-  height: 10%;
+  width: 100vw;
+  height: 22vh;
 }
 
 
@@ -98,20 +104,22 @@ li {
 
 .exit {
   color: var(--secondary);
-  width: 0%;
-  text-align: center;
-  padding: 42px;
-  padding-right: 75px;
-  position: relative;
-  top: 37%;
-  left: 8%;
-  cursor: pointer;
-  transition: top .8s, left .8s, transform .8s;
+    width: 0%;
+    text-align: center;
+    padding: 42px;
+    padding-right: 75px;
+    position: absolute;
+    top: 0%;
+    right: 3%;
+    cursor: pointer;
+    transition: top .8s, left .8s, transform .8s;
+    font-size: 39px;
+    z-index: 15;
 }
 
 
 .main {
-
+  
   position: relative;
   padding: 0;
   top: 0px;
@@ -121,6 +129,7 @@ li {
   height: 100%;
   justify-content: center;
   overflow: hidden;
+  
 }
 
 #myVideo {
@@ -172,7 +181,7 @@ transform: scale(1, -1);
 
 
 .menu {
-  
+  /*
   overflow: hidden;
   border-radius: 50%;
   width: 60vw;
@@ -180,7 +189,18 @@ transform: scale(1, -1);
   top: -14%;
   right: -23%;
 
-  transition: height .8s, width .8s;
+  transition: height .8s, width .8s;*/
+
+
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+
+  position: absolute;
+  transition: bottom .8s;
+  background-color: var(--main);
+  background: auto;
 }
 
 .nav-link:active{
@@ -233,11 +253,12 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     display: grid;
     border-radius: 0;
     justify-content: right;
-    width: 50%;
+    width: 100%;
     height: 100vh;
     top: 0;
     right: 0;
     background-color: transparent;
+    visibility: visible;
   }
 
 
@@ -298,11 +319,13 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 
     display: grid;
     border-radius: 0;
     justify-content: right;
-    width: 50%;
+    width: 100%;
     height: 100vh;
     top: 0;
     right: 0;
     background-color: transparent;
+  
+    visibility: visible;
   }
 
 }
