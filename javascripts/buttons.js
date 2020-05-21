@@ -14,10 +14,33 @@ var menuContent = [main, projects, about, portfolio, contacts];
 
 
 var io = true;
+
+
+var phone = true;
+console.log(window.innerWidth);
+if (window.innerWidth >= 600) {
+	phone = false;
+}
+
+console.log(phone);
+if (phone) {
+    menuContent.forEach(e => {
+        e.addEventListener('click', function () {
+            setTimeout(function () {
+                exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
+            }, 150);
+            exit.style.transform = "rotate(0deg)";
+
+            menuContent.forEach(hide);
+            io = !io;
+        });
+    })
+}
+
 exit.addEventListener('click', function () {
-    
+
     if (io) { //open menu
-  
+
 
         menuContent.forEach(show);
 
@@ -31,9 +54,9 @@ exit.addEventListener('click', function () {
 
 
         menuContent.forEach(hide);
-        setTimeout(function(){
+        setTimeout(function () {
             exit.innerHTML = "<div class=\"column\"></div> <div class=\"column\"></div> <div class=\"column\"></div>";
-        },150);
+        }, 150);
 
 
         exit.style.transform = "rotate(0deg)";
@@ -64,10 +87,6 @@ function hide(item, index) {
         item.style.opacity = 0;
         item.style.pointerEvents = "none";
 
-    }, 100 + 150 * (menuContent.length-index));
-    
+    }, 100 + 150 * (menuContent.length - index));
+
 }
-
-
-
-

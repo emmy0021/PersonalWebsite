@@ -45,6 +45,10 @@ function resize() {
 	canvas.width = w;
 	canvas.height = h;
 
+	if (window.innerWidth >= 600) {
+		phone = false;
+	}
+
 }
 
 function Star() {
@@ -149,35 +153,45 @@ function animate() {
 animate();
 
 
-console.log(worldImg)
 document.onmousedown = function (event) {
-	console.log(event.path[0] != exit);
+	//console.log(event.path[0].className);
 	if (event.path[0] != pause || event.path[1] != pause) {
 		if (event.path[0] == exit) {
 			warpSpeed = false;
-		}else{
-
+		} else if (event.path[0].className == 'hoverable') {
 			warpSpeed = true;
 			setTimeout(function () {
+				warpSpeed = false;
+			}, 2000);
+
+		} else {
+			warpSpeed = true
+			let timeOut;
+
+			if(phone){
+				timeOut = 100;
+			}else{
+				timeOut = 1500;
+			}
+			setTimeout(function () {
 				worldImg.style.left = "-70%";
-			}, 600);
+			}, timeOut);
 		}
 	} else {
 		warpSpeed = false;
-		console.log("c");
 	}
 
 
 }
 document.onmouseup = function () {
 
-
-
 	setTimeout(function () {
 		worldImg.style.left = "10%";
 	}, 300);
 
-	setTimeout(function () {
-		warpSpeed = false;
-	}, 950);
+	if(!phone) {
+		setTimeout(function () {
+			warpSpeed = false;
+		}, 1500);
+	}
 }
