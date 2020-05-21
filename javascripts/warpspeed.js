@@ -13,7 +13,8 @@ canvas.height = h;
 
 var c = canvas.getContext("2d");
 
-
+var worldImg = document.getElementById("worldImg");
+var pause = document.getElementById("pause");
 
 
 /* */
@@ -23,6 +24,21 @@ window.addEventListener('resize', function () {
 	centerX = w / 2;
 	centerY = h / 2;
 	resize();
+});
+
+pause.addEventListener('mousedown', function () {
+	p = !p;
+
+	if (p) {
+		pause.innerHTML = "<div class=\"play\"></div>";
+	} else {
+		pause.innerHTML = "<div class=\"verticalStripe\"></div>";
+		pause.innerHTML += "<div class=\"verticalStripe\"></div>";
+	}
+});
+
+pause.addEventListener('hover', function () {
+	console.log("here");
 });
 
 function resize() {
@@ -48,7 +64,7 @@ function Star() {
 	var dy = (y - centerY) * speedMult;
 
 
-	
+
 
 	var dr = .003;
 
@@ -58,7 +74,7 @@ function Star() {
 	this.dy = dy;
 	this.radius = radius;
 	this.dr = dr;
-	this.speedMult = .007;//.007 is nice
+	this.speedMult = .007; //.007 is nice
 
 
 
@@ -95,8 +111,8 @@ function Star() {
 
 		this.x += this.dx;
 		this.y += this.dy;
-		this.dx*= 1.018;
-		this.dy*= 1.018;
+		this.dx *= 1.018;
+		this.dy *= 1.018;
 		this.radius += this.dr;
 		this.draw();
 	}
@@ -111,45 +127,57 @@ for (var i = 0; i < numStars; i++) {
 }
 
 
-
+var p = false;
 
 function animate() {
+
 	requestAnimationFrame(animate);
-	if(!warpSpeed){
-		c.clearRect(0, 0, w, h);
-	}
-	
 
-	for (var i = 0; i < numStars; i++) { ////////////////////////////////////////
-		stars[i].update()
-	}
 
+	if (!p) {
+		if (!warpSpeed) {
+			c.clearRect(0, 0, w, h);
+		}
+
+		for (var i = 0; i < numStars; i++) {
+			stars[i].update();
+		}
+	}
 
 }
 
 animate();
 
-var worldImg = document.getElementById("worldImg");
+
 console.log(worldImg)
-document.onmousedown = function(){
-	warpSpeed = true;
+document.onmousedown = function (event) {
+	console.log(event.path[0] != exit);
+	if (event.path[0] != pause || event.path[1] != pause) {
+		if (event.path[0] == exit) {
+			warpSpeed = false;
+		}else{
 
-	setTimeout(function(){
-		worldImg.style.left = "-70%";
-	},600);
-}
-document.onmouseup = function(){
-
-	
-	
-	setTimeout(function(){
-		worldImg.style.left = "10%";
-	},300);
-
-	setTimeout(function(){
+			warpSpeed = true;
+			setTimeout(function () {
+				worldImg.style.left = "-70%";
+			}, 600);
+		}
+	} else {
 		warpSpeed = false;
-	},950);
+		console.log("c");
+	}
+
+
 }
+document.onmouseup = function () {
 
 
-/* */
+
+	setTimeout(function () {
+		worldImg.style.left = "10%";
+	}, 300);
+
+	setTimeout(function () {
+		warpSpeed = false;
+	}, 950);
+}
