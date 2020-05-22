@@ -116,6 +116,7 @@ li {
   transition: top .8s, left .8s, transform .8s;
   font-size: 39px;
   z-index: 100;
+
 }
 
 
@@ -293,6 +294,7 @@ li {
   left: 20px;
   box-sizing: border-box;
   z-index: 20;
+  cursor: pointer;
 }
 
 .pause .verticalStripe {

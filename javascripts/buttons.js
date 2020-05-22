@@ -99,3 +99,12 @@ function hide(item, index) {
     }, 100 + 150 * (menuContent.length - index));
 
 }
+
+document.addEventListener('mousedown', (e)=>{
+    document.body.style.cursor = "url(/public/earthIcon.png), default";
+});
+
+document.addEventListener('mouseup', (e)=>{
+    document.body.style.cursor = "url(/public/earthIcon.png), default";
+
+});
