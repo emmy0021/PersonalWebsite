@@ -481,9 +481,15 @@ li {
 
 @media only screen and (max-height: 513px) {
   li a{
-    font-size: 30px;
+    font-size: 28px;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
   .nav-link{
     padding: 0;
+  }
+
+  .hoverable::before {
+    top: -58px;
   }
 }
