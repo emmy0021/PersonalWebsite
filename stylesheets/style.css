@@ -478,3 +478,12 @@ li {
     top: -20px;
   }
 }
+
+@media only screen and (max-height: 513px) {
+  li a{
+    font-size: 30px;
+  }
+  .nav-link{
+    padding: 0;
+  }
+}
