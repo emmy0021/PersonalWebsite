@@ -42,7 +42,7 @@ ul {
   box-sizing: border-box;
   list-style: none;
   font-weight: 700;
-  font-family: 'xol';
+  font-family: 'Press Start 2P', cursive;
   top: -0%;
   background: var(--background);
   color: var(--text-color);
@@ -434,38 +434,7 @@ li {
   /* For desktop: */
 
   ul {
-    display: flex;
     font-size: 2.4rem;
-    font-weight: 500;
-    background-color: transparent;
-  }
-
-  li a {
-    text-align: end;
-    display: initial;
-    float: right;
-  }
-
-
-  .menu {
-    position: absolute;
-    overflow: hidden;
-    display: grid;
-    border-radius: 0;
-    justify-content: right;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    background-color: transparent;
-
-    visibility: visible;
-  }
-
-  nav {
-    left: auto;
-    right: 0;
-    width: 50%
   }
 
   li {
