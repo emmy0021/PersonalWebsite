@@ -1,0 +1,113 @@
+:root{
+    --text-color: #333;
+    --time: .15s;
+}
+
+body{
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+}
+.nav{
+    position: fixed;
+    height: 20vh;
+    top: 2.5px;
+    left: 0;
+    width: 100vw;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: center;
+    padding-top: 4vh;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.menu{
+    width: 80vw;
+    height: 6vh;
+    margin-top: 4%;
+    left: 10vw;
+    position: relative;
+   
+}
+
+.menu:hover + ul{
+    transition: all .1s;
+}
+
+
+.button{
+    box-sizing: content-box;
+}
+
+.column{
+    width: 7%;
+    height: 1.9px;
+    background-color: var(--text-color);
+    left: 37%;
+    top: 30%;
+    position: relative;
+    margin-top: 2.6px;
+    pointer-events: none;
+}
+.txt{
+    position: relative;
+    left: 5%;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+ul{
+    top: 10px;
+    color: var(--text-color);
+    font-size: 13px;
+    left: 10%;
+    position: relative;
+    width: 70px;
+    height: 100px;
+    margin: auto;
+    display: table-caption;
+
+    visibility: hidden;
+}
+
+li{
+    padding: 8px;
+    display: flex;
+    width: 71vw;
+    left: -3%;
+    position: relative;
+    padding-left: 15%;
+}
+
+li::after{
+    background-color: lightblue;
+    height: 73%;
+    top: 11%;
+    left: 1%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: .3s;
+
+    width: 0%;
+}
+
+li:hover::after{
+    width: 100%;
+}
+
+.mainContent{
+    height: 80vh;
+    width: 100vw;
+    top: 20vh;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    transition: top var(--time);
+    color: white;
+    font-weight: 800;
+    padding: 2%;
+}
+
