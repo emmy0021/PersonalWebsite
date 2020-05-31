@@ -1,5 +1,6 @@
 :root {
     --text-color: white;
+    --time: 18.8s;
 }
 
 body {
@@ -57,7 +58,7 @@ li {
     cursor: pointer;
 
     animation-name: MenuColor;
-    animation-duration: 14.7s;
+    animation-duration: var(--time);
     animation-iteration-count: infinite;
     font-weight: 600;
 }
@@ -72,7 +73,7 @@ li::before {
     left: 14%;
     transition: width .4s;
     animation-name: MenuColor;
-    animation-duration: 14.7s;
+    animation-duration: var(--time);
     animation-iteration-count: infinite;
 }
 
@@ -89,7 +90,7 @@ li:hover::before {
     opacity: 1;
 
     animation-name: MenuColor;
-    animation-duration: 14.7s;
+    animation-duration: var(--time);
     animation-iteration-count: infinite;
 }
 
@@ -106,6 +107,8 @@ li:hover::before {
     display: flex;
     overflow: hidden;
     border-radius: 50%;
+
+    
 }
 
 .previous {
