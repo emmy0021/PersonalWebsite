@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='stylesheets/ECommerceStyle.css'>
-    <script src='javascripts/ECommerce.js'></script>
+    <link rel='stylesheet' type='text/css' href='stylesheets/ECommerceStyle.css'>
+
 </head>
+
 <body>
 
     <video autoplay muted loop id="myVideo">
@@ -15,9 +17,10 @@
         Your browser does not support HTML5 video.
       </video>
 
-    <div class="nav">
+    <div class="nav" id="nav">
         <div class="logo">LOGO</div>
         <ul class="buttons">
+            <div class="spacer"></div>
             <li>CONTACT</li>
             <li>OUR STORY</li>
             <li>EXPLORE</li>
@@ -25,18 +28,29 @@
             <div class="spacer1"></div>
         </ul>
 
+        <div class="close" id ="close" onclick="openClose()">
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+
         <div class="search"></div>
         <div class="columns"></div>
     </div>
 
-    <div class="traverse previous"><p class="align1"><</p></div>
-    <div class="traverse next"><p class="align1">></p></div>
-    
-    <div class="mainContent">
-        <p class="main">Welcome to Lorem ipsum</p>
-        <p class="description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>    
+    <div class="traverse previous">
+        <p class="align1">
+            <</p> </div> <div class="traverse next">
+                <p class="align1">></p>
     </div>
 
-    
+    <div class="mainContent">
+        <p class="main">Welcome to Lorem ipsum</p>
+        <p class="description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas.</p>
+    </div>
+
+    <script src='javascripts/ECommerce.js'></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 :root {
     --text-color: white;
+    /*white*/
     --time: 18.8s;
 }
 
@@ -18,13 +19,14 @@ body {
 .nav {
     user-select: none;
     position: fixed;
-    height: 12vh;
+    height: 17vh;
     top: 5px;
     left: 3%;
     overflow: hidden;
     width: 96%;
     color: var(--text-color);
-
+    z-index: 10;
+    transition: height 1s;
 
 }
 
@@ -57,10 +59,16 @@ li {
     float: right;
     cursor: pointer;
 
-    animation-name: MenuColor;
-    animation-duration: var(--time);
-    animation-iteration-count: infinite;
+
     font-weight: 600;
+
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    color: black;
+
+    font-size: 35px;
+    background-color: white;
 }
 
 li::before {
@@ -69,7 +77,7 @@ li::before {
     height: 4px;
     background: black;
     position: absolute;
-    top: 69%;
+    top: 80%;
     left: 14%;
     transition: width .4s;
     animation-name: MenuColor;
@@ -79,6 +87,12 @@ li::before {
 
 li:hover::before {
     width: 75%;
+}
+
+.spacer {
+    width: 100vw;
+    height: 20vh;
+    position: relative;
 }
 
 .logo {
@@ -108,7 +122,7 @@ li:hover::before {
     overflow: hidden;
     border-radius: 50%;
 
-    
+    visibility: hidden;
 }
 
 .previous {
@@ -129,7 +143,7 @@ li:hover::before {
     width: 70%;
 }
 
-.main {}
+
 
 .description {
     font-size: 18px;
@@ -146,4 +160,62 @@ li:hover::before {
     top: -92%;
     position: absolute;
     left: 13%;
+}
+
+.column {
+    width: 56px;
+    margin-bottom: 9px;
+    border-radius: 9px;
+    height: 7.5px;
+    background: var(--text-color);
+    transition: all .8s;
+    pointer-events: none;
+
+    animation-name: MenuColor;
+    animation-duration: var(--time);
+    animation-iteration-count: infinite;
+}
+
+.close {
+    position: absolute;
+    right: 2%;
+    padding: 18px;
+    top: 1%;
+
+
+}
+
+
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets: */
+
+    li {
+        width: 100px;
+        font-size: 14px;
+        padding: 13px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        float: right;
+        background-color: transparent;
+
+        animation-name: MenuColor;
+        animation-duration: var(--time);
+        animation-iteration-count: infinite;
+    }
+
+    .close {
+        visibility: hidden;
+    }
+
+    .spacer {
+        height: 0;
+    }
+
+    .nav {
+        background: transparent;
+    }
+
 }
