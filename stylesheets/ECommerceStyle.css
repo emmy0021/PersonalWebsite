@@ -1,0 +1,129 @@
+:root{
+    --text-color: white;
+}
+
+body{
+    font-family:verdana;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+
+.nav{
+    user-select: none;
+    position: fixed;
+    height: 12vh;
+    top: 5px;
+    left: 3%;
+    overflow: hidden;
+    width: 96%;
+    color: var(--text-color);
+    
+
+}
+
+@keyframes MenuColor {
+    0% {color: var(--text-color);}
+    15% {color: var(--text-color);}
+
+    35% {color: black;}
+    100% {color: black;}
+
+  }
+
+li{
+    position: relative;
+    display: inline-block;
+    padding: 16px;
+    float: right;
+    cursor: pointer;
+
+    animation-name: MenuColor;
+    animation-duration: 14.7s;
+    animation-iteration-count: infinite;
+    font-weight: 600;
+}
+
+li::before{
+    content: '';
+    width: 0px;
+    height: 4px;
+    background: black;
+    position: absolute;
+    top: 69%;
+    left: 14%;
+    transition: width .4s;
+    animation-name: MenuColor;
+    animation-duration: 14.7s;
+    animation-iteration-count: infinite;
+}
+
+li:hover::before{
+    width: 75%;
+}
+
+.logo{
+    position: absolute;
+    padding: 1rem;
+    border: var(--text-color) solid 5px;
+    margin: .5rem;
+    font-weight: 900;
+    opacity: 1;
+}
+
+.traverse{
+    top: 50%;
+    position: fixed;
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 900;
+    border: var(--text-color) solid 3px;
+    height: 75px;
+    width: 75px;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.previous{
+    left: 1%;
+}
+
+.next{
+    right: 1%;
+}
+.mainContent{
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    color: var(--text-color);
+    font-size: 65px;
+    font-weight: bold;
+    width: 70%;
+}
+
+.main{
+}
+
+.description{
+    font-size: 18px;
+    position: absolute;
+    top: 62%;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+}
+
+.align1{
+    width: 100%;
+    height: 100%;
+    top: -92%;
+    position: absolute;
+    left: 13%;
+}
