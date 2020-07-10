@@ -1,0 +1,85 @@
+:root {
+    --navBar-color: #FFFFFF
+}
+
+body {
+    margin: 0;
+    background-color: #142634;
+}
+
+.nav {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    position: absolute;
+    background: linear-gradient(180deg, #FBEEFF 0%, rgba(146, 128, 153, 0) 100%), #FFFFFF;
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.3), inset 0px -3px 5px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-areas: 'tab1 tab2 tab3 tab4';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.tab1,
+.tab2,
+.tab3,
+.tab4 {
+    overflow: hidden;
+    fill: currentColor;
+}
+
+.center {
+    left: 40%;
+    position: relative;
+    top: 34%;
+
+}
+
+.bigger {
+    width: auto;
+    height: 35px;
+    top: 12%;
+    left: 31%;
+}
+
+.big {
+    width: auto;
+    height: 28px;
+    left: 33%;
+    top: 18%;
+}
+
+.selectedTab {
+    overflow: initial;
+}
+
+.selected {
+    top: -54%;
+}
+
+.selectedHome::after{
+    content: 'Home';
+    left: 21px;
+    top: 19px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.selected{
+    content: "";
+    background-color: #142634;
+    width: 50px;
+    height: 50px;
+    top: -23px;
+    left: 28px;
+    border-radius: 26px;
+    position: absolute;
+    background: #142634;
+    box-shadow: 0px -2px 5px #3A4751, 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+}
