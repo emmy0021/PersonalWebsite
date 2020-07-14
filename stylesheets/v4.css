@@ -1,10 +1,11 @@
 :root {
-    --navBar-color: #FFFFFF
+    --navBar-color: #FFFFFF;
+    --background-color: #142634;
 }
 
 body {
     margin: 0;
-    background-color: #142634;
+    background-color: var(--background-color);
 }
 
 .nav {
@@ -57,8 +58,18 @@ body {
     overflow: initial;
 }
 
-.selected {
-    top: -54%;
+.selected{
+    background-color: var(--background-color);
+    background-color: var(--background-color);
+    top: -5px;
+    position: absolute;
+}
+
+.selected::before{
+    content: '';
+    height: 1000px;
+    width: 1000px;
+    background-color: ;
 }
 
 .selectedHome::after{
@@ -70,16 +81,63 @@ body {
     font-weight: 700;
 }
 
-.selected{
-    content: "";
-    background-color: #142634;
-    width: 50px;
-    height: 50px;
-    top: -23px;
-    left: 28px;
-    border-radius: 26px;
+.houseIcon{
+    width: 15px;
+    height: 12.5px;
+    background: var(--background-color);
     position: absolute;
-    background: #142634;
-    box-shadow: 0px -2px 5px #3A4751, 0px 4px 4px rgba(0, 0, 0, 0.25);
+    bottom: 22px;
+    left: 42.7px;
+    border-left: solid 2.75px var(--navBar-color);
+    border-right: solid 2.75px var(--navBar-color);
+    border-bottom: solid 2.75px var(--navBar-color);
+    border-radius: 2px 2px 4px 4px;
 }
+
+.houseIcon::before{
+    content: "";
+    border-left: solid 2.75px var(--navBar-color);
+    border-top: solid 2.75px var(--navBar-color);
+    height: 11.5px;
+    width: 11.5px;
+    display: block;
+    position: relative;
+    left: 0.5px;
+    top: -7.1px;
+    transform: rotate(45deg);
+    border-radius: 27px 13px 9pc 13px;
+}
+
+.houseIcon::after{
+    content: "";
+    height: 12px;
+    width: 6.5px;
+    display: block;
+    position: relative;
+    background-color: var(--navBar-color);
+    left: 4px;
+    bottom: 11px;
+    border-radius: 5px 5px 0 0;
+}
+
+.selectCircle{
+    background-color: var(--background-color);
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -17px;
+    left: 35px;
+    border-radius: 29px;
+}
+
+.portfolioIcon{
+    background-color: var(--navBar-color);
+    width: 21px;
+    height: 16px;
+    position: relative;
+    left: 35%;
+    bottom: -27%;
+    border: 2.7px solid var(--background-color);
+    border-radius: 4px;
+    display: inherit;
 }
